@@ -11,7 +11,8 @@ export default defineConfig({
         vueI18n({
             // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
             // compositionOnly: false,
-            include: path.resolve(__dirname, './path/to/src/locales/**')
+            // you need to set i18n resource including paths !
+            include: path.resolve(__dirname, './**/locales/*.yaml'),
         })
     ],
     css: {

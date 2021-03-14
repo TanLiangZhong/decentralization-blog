@@ -1,16 +1,15 @@
 <template>
-  <h1>Home</h1>
+  <p>{{ t('menu.home') }}</p>
 </template>
-<script lang="ts">
-import {defineComponent} from 'vue';
 
-export default defineComponent({
-  name: 'Home',
+<script>
+import {useI18n} from 'vue-i18n'
+
+export default {
+  name: 'App',
   setup() {
-    return {};
-  },
-});
+    const {t} = useI18n()
+    return {t}
+  }
+}
 </script>
-<style>
-
-</style>
