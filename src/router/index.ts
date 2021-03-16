@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
+import conf from './conf'
 
 /**
  * 路由配置
@@ -9,24 +10,7 @@ const routes: RouteRecordRaw[] = [
         name: 'BaseLayout',
         redirect: '/',
         component: () => import('../layout/BaseLayout.vue'),
-        children: [
-            {
-                path: '/',
-                name: 'Home',
-                meta: {
-                    title: 'Home'
-                },
-                component: () => import('../views/Home/index.vue')
-            },
-            {
-                path: '/bank',
-                name: 'Bank',
-                meta: {
-                    title: 'Bank'
-                },
-                component: () => import('../views/Bank/index.vue')
-            },
-        ]
+        children: conf
     },
     //...
 ]
