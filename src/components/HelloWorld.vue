@@ -6,8 +6,8 @@
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
     +
     <a
-      href="https://marketplace.visualstudio.com/items?itemName=octref.vetur"
-      target="_blank"
+        href="https://marketplace.visualstudio.com/items?itemName=octref.vetur"
+        target="_blank"
     >Vetur</a>
     or
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
@@ -30,19 +30,20 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+
 export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup: () => {
     const count = ref(0)
     return { count }
-  }
+  },
 })
 </script>
 

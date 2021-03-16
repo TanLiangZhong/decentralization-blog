@@ -27,30 +27,29 @@
   </a-layout>
 </template>
 <script lang="ts">
-import {defineComponent, reactive} from 'vue'
-import {useI18n} from 'vue-i18n'
-import {mapState} from "vuex"
-import {SystemState} from '../core-entity'
-import LzMenu from "../components/LzMenu/index.vue";
+import { defineComponent, reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { mapState } from 'vuex'
+import { SystemState } from '../core-entity'
+import LzMenu from '../components/LzMenu/index.vue'
 
 export default defineComponent({
   name: 'BaseLayout',
-  components: {LzMenu},
+  components: { LzMenu },
   computed: {
     ...mapState({
-      system: (state: SystemState) => state.system
-    })
+      system: (state: SystemState) => state.system,
+    }),
   },
   setup() {
-    const {locale} = useI18n()
-
+    const { locale } = useI18n()
 
     return reactive({
       locale,
-      selectedKeys: 0
+      selectedKeys: 0,
     })
   },
-});
+})
 </script>
 <style lang="less" scoped>
 

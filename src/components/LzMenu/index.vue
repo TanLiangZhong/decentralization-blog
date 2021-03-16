@@ -2,7 +2,7 @@
   <nav class="lz-menu">
     <ul>
       <li v-for="menu in menus" :key="menu.name" :ref="menu.name" @mouseover="mouseoverMenu(menu)" @click="to(menu)"
-          :class="(menu.name === activeMenu || menu.name === hoverMenu) ? 'active': ''">
+          :class="(menu.name === activeMenu || menu.name === hoverMenu) ? 'active' : ''">
         <router-link :to="menu.path"><span>{{ t(menu.meta.title, menu.name) }}</span></router-link>
       </li>
     </ul>
@@ -10,39 +10,39 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from "vue";
-import {useI18n} from "vue-i18n";
-import router from "../../router";
+import { defineComponent, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import router from '../../router'
 
 export default defineComponent({
   name: 'LzMenu',
   props: {
     menus: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   setup: () => {
     let activeMenu = ref<string>('Home')
     let hoverMenu = ref<string>('Home')
 
     const to = (menu: any) => {
-      router.push({path: menu.path})
+      router.push({ path: menu.path })
       activeMenu.value = menu.name
     }
 
     const mouseoverMenu = (menu: any) => hoverMenu.value = menu.name
 
-    const {t} = useI18n()
+    const { t } = useI18n()
     return {
       t,
       activeMenu,
       hoverMenu,
       to,
-      mouseoverMenu
+      mouseoverMenu,
     }
-  }
-});
+  },
+})
 
 </script>
 
