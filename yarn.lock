@@ -12,11 +12,6 @@
     resize-observer-polyfill "^1.5.1"
     vue "^3.0.0"
 
-"@ant-design/aliyun-theme@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.npm.taobao.org/@ant-design/aliyun-theme/download/@ant-design/aliyun-theme-0.0.4.tgz#d2b6973f300bd3dd10a16b47c89f48d99423eb76"
-  integrity sha1-0raXPzAL090QoWtHyJ9I2ZQj63Y=
-
 "@ant-design/colors@^5.0.0":
   version "5.1.1"
   resolved "https://registry.npm.taobao.org/@ant-design/colors/download/@ant-design/colors-5.1.1.tgz#800b2186b1e27e66432e67d03ed96af3e21d8940"

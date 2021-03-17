@@ -24,13 +24,13 @@ export default [
         component: () => import('../views/About/index.vue'),
     },
     {
-        path: '/about',
+        path: '/story',
         name: 'Story',
         meta: {
             title: 'menu.story',
             hidden: true
         },
-        component: () => import('../views/About/index.vue'),
+        component: () => import('../views/Story/index.vue'),
     },
     {
         path: '/published',
