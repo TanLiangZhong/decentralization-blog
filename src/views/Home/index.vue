@@ -6,7 +6,7 @@
 import { useI18n } from 'vue-i18n'
 
 export default {
-  name: 'App',
+  name: 'Home',
   setup() {
     const { t } = useI18n()
     return { t }

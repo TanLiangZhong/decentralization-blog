@@ -1,5 +1,5 @@
-import { RouteRecordRaw } from 'vue-router'
+import {RouteRecordRaw} from 'vue-router'
 
-export interface SystemState {
-  menu: RouteRecordRaw[]
+declare interface SystemState {
+    menu: RouteRecordRaw[]
 }

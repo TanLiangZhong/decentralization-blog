@@ -1,2 +1,11 @@
 menu:
   home: Home
+  music: Music
+  about: About
+btn:
+  writeStory: Write a story
+  language: zh
+  publish: Publish
+  draftBox: DraftBox
+editor:
+  text_1: Automatically save to drafts

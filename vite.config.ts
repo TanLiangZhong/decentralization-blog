@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueI18n from '@intlify/vite-plugin-vue-i18n'
+// @ts-ignore
 import path from 'path'
 
 // https://vitejs.dev/config/

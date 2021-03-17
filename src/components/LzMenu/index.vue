@@ -1,7 +1,8 @@
 <template>
   <nav class="lz-menu">
     <ul>
-      <li v-for="menu in menus" :key="menu.name" :ref="menu.name" @mouseover="mouseoverMenu(menu)" @click="to(menu)"
+      <li v-for="menu in menuList" :key="menu.name" :ref="menu.name" @mouseleave="mouseoverMenu(menu,0)"
+          @mouseover="mouseoverMenu(menu,1)" @click="to(menu)"
           :class="(menu.name === activeMenu || menu.name === hoverMenu) ? 'active' : ''">
         <router-link :to="menu.path"><span>{{ t(menu.meta.title, menu.name) }}</span></router-link>
       </li>
@@ -10,8 +11,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import {defineComponent, ref} from 'vue'
+import {useI18n} from 'vue-i18n'
 import router from '../../router'
 
 export default defineComponent({
@@ -22,20 +23,22 @@ export default defineComponent({
       required: true,
     },
   },
-  setup: () => {
+  setup: (props) => {
     let activeMenu = ref<string>('Home')
     let hoverMenu = ref<string>('Home')
 
     const to = (menu: any) => {
-      router.push({ path: menu.path })
+      router.push({path: menu.path})
       activeMenu.value = menu.name
     }
 
-    const mouseoverMenu = (menu: any) => hoverMenu.value = menu.name
+    const mouseoverMenu = (menu: any, flag: number) => hoverMenu.value = (flag === 1 ? menu.name : '')
+    const menuList = props.menus.filter((it: any) => !it.meta.hidden)
 
-    const { t } = useI18n()
+    const {t} = useI18n()
     return {
       t,
+      menuList,
       activeMenu,
       hoverMenu,
       to,

@@ -1,2 +1,12 @@
 menu:
   home: 主页
+  music: 音乐
+  about: 关于
+btn:
+  writeStory: 写一个故事
+  language: en
+  publish: 发布
+  draftBox: 草稿箱
+editor:
+  text_1: 自动保存至草稿箱
+
